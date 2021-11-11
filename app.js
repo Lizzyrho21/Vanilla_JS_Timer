@@ -10,7 +10,7 @@ without having to watch a video on it. Remember to take notes, lizzy!*/
 
 //create A variable that holds the date object
 //Then call getTime method on the getDate object
-var countdownTimer = new Date("Jul 25, 2022 16:37:52").getTime();
+var countdownTimer = new Date("Jan 31, 2022 16:37:52").getTime();
 
 // console.log(countdownTimer);
 
@@ -29,23 +29,33 @@ var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
 
 //4. now lets display this to the users!!
-document.getElementById("days").innerHTML = days + "d "
-document.getElementById("hours").innerHTML = hours + "h " 
-document.getElementById("minutes").innerHTML = minutes + "m " 
-document.getElementById("seconds").innerHTML = seconds + "s"
+document.getElementById("days").innerHTML = days + "d ";
+document.getElementById("hours").innerHTML = hours + "h " ;
+document.getElementById("minutes").innerHTML = minutes + "m " ;
+document.getElementById("seconds").innerHTML = seconds + "s";
+
+if(days <= 81){document.getElementById("update").innerHTML = "<h1>Almost Done!</h1>"};
+if(days === 1){document.getElementById("update").innerHTML = "<h1>1 more day!</h1>"}
+
+
+
 
 
 //5. Display the message when the timer is oevr!
+
 if (timeLeft < 0) {
     clearInterval(myfunc);
     document.getElementById("days").innerHTML = ""
     document.getElementById("hours").innerHTML = "" 
     document.getElementById("minutes").innerHTML = ""
     document.getElementById("seconds").innerHTML = ""
-    document.getElementById("end").innerHTML = "TIME UP ⏰";
+    document.getElementById("end").innerHTML = "BOOTCAMP OVER!! ⏰";
 }
 
-}, 1000)
+}, 1000) 
+
+
+
 
 //3. We calculate the time difference in milliseconds
 //between our current date and end date. Once this difference 
